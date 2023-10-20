@@ -1,54 +1,38 @@
-package ru.maxima.spring.service;
+package ru.levelup.devops_app.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import ru.maxima.spring.models.Item;
-import ru.maxima.spring.models.Person;
-import ru.maxima.spring.repositories.ItemRepository;
-import ru.maxima.spring.repositories.PeopleRepository;
+import ru.levelup.devops_app.model.Book;
+import ru.levelup.devops_app.model.Person;
 
 import java.util.List;
 
 @Service
-public class ItemService {
-    private final ItemRepository itemRepository;
+public class BookService {
 
-    @Autowired
-    public ItemService(ItemRepository itemRepository) {
-        this.itemRepository = itemRepository;
+    public List<Book> findAll() {
+        return null;
     }
 
-    public List<Item> findAll() {
-        return itemRepository.findAll();
+    public Book findById(Long id) {
+        return null;
     }
 
-    public Item findById(Long id) {
-        return itemRepository.findById(id).orElse(null);
+    public void save(Book item) {
+
     }
 
-    @Transactional
-    public void save(Item item) {
-        itemRepository.save(item);
+    public void update(Long id, Book item) {
     }
 
-    @Transactional
-    public void update(Long id, Item item) {
-        item.setId(id);
-        itemRepository.save(item);
-    }
-
-    @Transactional
     public void delete(Long id) {
-        itemRepository.deleteById(id);
     }
 
-    public Item findByItemName(String name) {
-        return itemRepository.findByItemName(name);
+    public Book findByItemName(String name) {
+        return null;
     }
 
-    public Item findByOwner(Person owner) {
-        return itemRepository.findByOwner(owner);
+    public Book findByOwner(Person owner) {
+        return null;
     }
 
 }
